@@ -17,7 +17,7 @@ env:
   - TEST_PROFILE=test-9.1.8.0
   - TEST_PROFILE=test-9.1.17.0
 
-install: if [[ -v BUNDLE_INSTALL ]]; then jruby -S bundle install; else echo ""; fi
+install: true
 
 script: if [[ -v TEST_COMMAND ]]; then $TEST_COMMAND; else mvn verify -P $TEST_PROFILE; fi
 
